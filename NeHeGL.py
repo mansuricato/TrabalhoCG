@@ -42,7 +42,7 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 import sys
 
-from Lesson48 import *		# Draw (), Initialize () and all the real OpenGL work.
+from AppController import *		# Draw (), Initialize () and all the real OpenGL work.
 from ArcBall import *		# // *NEW* ArcBall header
 
 
