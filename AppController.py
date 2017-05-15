@@ -28,7 +28,7 @@ g_ThisRot = Matrix3fT ()
 g_ArcBall = ArcBallT (640, 480)
 g_isDragging = False
 g_quadratic = None
-g_isClicked = True
+g_isNotClicked = True
 
 solidFaces = [];
 objectsToDraw = [];
@@ -225,7 +225,7 @@ def getPolygonsCrossedByLine(line, polygons):
 	return polygonArray;
 
 def getPolygonClosestToScreen(polygons, clickLine):
-	closerPolygon = None;
+	closestPolygon = None;
 	distanceToOrigin = 2;
 
 	for polygon in polygons:
@@ -233,9 +233,9 @@ def getPolygonClosestToScreen(polygons, clickLine):
 
 		if intersection[1] < distanceToOrigin:
 			distanceToOrigin = intersection[1];
-			closerPolygon = polygon;
+			closestPolygon = polygon;
 
-	return closerPolygon;
+	return closestPolygon;
 
 def chooseSurface(mouseX, mouseY, polygons):
 	global objectsToDraw;
@@ -334,14 +334,14 @@ def Upon_Click (button, button_state, cursor_x, cursor_y):
 		Glut calls this function when a mouse button is
 		clicked or released.
 	"""
-	global g_isDragging, g_LastRot, g_Transform, g_ThisRot, g_isClicked
+	global g_isDragging, g_LastRot, g_Transform, g_ThisRot, g_isNotClicked
 
 	g_isDragging = False
-	if (button == GLUT_RIGHT_BUTTON and button_state == GLUT_UP and g_isClicked):
+	if (button == GLUT_RIGHT_BUTTON and button_state == GLUT_UP and g_isNotClicked):
 		# Right button click
 		g_LastRot = copy.copy (g_ThisRot);
 
-		g_isClicked = False
+		g_isNotClicked = False
 
 		mouse_pt = Point2fT (cursor_x, cursor_y)
 		g_ArcBall.click (mouse_pt);
