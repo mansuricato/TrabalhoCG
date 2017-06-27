@@ -29,19 +29,19 @@ class menu:
 
         #botao para a textura 1
         self.imagem1 = PhotoImage(file='dragaoBranco.gif')
-        self.botao_textura1 = Radiobutton(text='textura1',value='dragaoBranco.jpg',variable=self.textura)
+        self.botao_textura1 = Radiobutton(text='Dragão Branco',value='dragaoBranco.jpg',variable=self.textura)
         self.botao_textura1.pack(anchor=W)
         self.botao_textura1.config(compound=BOTTOM,image=self.imagem1)
 
         #botao para a textura 2
         self.imagem2 = PhotoImage(file='squirtle.gif')
-        self.botao_textura2 = Radiobutton(text='textura2',value='squirtle.jpg',variable=self.textura)
+        self.botao_textura2 = Radiobutton(text='Squirtle',value='squirtle.jpg',variable=self.textura)
         self.botao_textura2.pack(anchor=W)
         self.botao_textura2.config(compound=BOTTOM,image=self.imagem2)
 
         #botao para a textura 3
         self.imagem3 = PhotoImage(file='tentomon.gif')
-        self.botao_textura3 = Radiobutton(text='textura3',value='tentomon.jpg',variable=self.textura)
+        self.botao_textura3 = Radiobutton(text='Tentomon',value='tentomon.jpg',variable=self.textura)
         self.botao_textura3.pack(anchor=W)
         self.botao_textura3.config(compound=BOTTOM,image=self.imagem3)
 
